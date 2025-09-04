@@ -24,7 +24,13 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Dialog , DialogTrigger , DialogContent , DialogHeader , DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const Home = () => {
   return (
@@ -60,28 +66,25 @@ const Home = () => {
               <div className="w-1 h-full bg-green-300"></div>
               <p className="flex-1 px-2 text-sm">Estudar React</p>
               <div className="flex gap-2 items-center">
-                <SquarePen size={16} className="cursor-pointer" />{" "}
-                <Trash size={16} className="cursor-pointer" />{" "}
+                <Dialog>
+            <DialogTrigger>
+              <SquarePen size={16} className="cursor-pointer" />
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Editar Tarefa</DialogTitle>
+              </DialogHeader>
+            
+              <div className="flex gap-2">
+                <Input placeholder="Editar Tarefa..." />
+                <Button className="cursor-pointer">Editar</Button>
+              </div>
+            </DialogContent>
+          </Dialog>
+          <Trash size={16} className="cursor-pointer" />
               </div>
             </div>
           </div>
-
-          <Dialog>
-            <Dialog>
-  <DialogTrigger>Abrir</DialogTrigger>
-  <DialogContent>
-    <DialogHeader>
-      <DialogTitle>Editar Tarefa</DialogTitle>
-    </DialogHeader>
-
-    <div className="flex gap-2">
-      <Input />
-      <Button>Editar</Button>
-      </div>
-
-  </DialogContent>
-</Dialog>
-          </Dialog>
 
           <div className="flex justify-between mt-4">
             <div className="flex gap-2 items-center">
